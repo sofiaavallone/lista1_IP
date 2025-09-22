@@ -216,9 +216,9 @@ else:
         print(f"{nome4} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.")
     
 #  Outputs relacionados com combinações de nomes
-    if marshall == True and lily == True:
+    if marshall == True and lily == True and quantidade_pessoas == 2:
         print("Nada melhor que um casal para dar conselhos de relacionamento.")
-    if barney == True and marshall == True and lily == False and robin == False:
+    if barney == True and marshall == True and quantidade_pessoas == 2:
         print("Sem dúvida os melhores amigos de Ted. Mas tomara que Barney não queira implicar com Marshall sobre quem realmente é o melhor amigo dele.")
     if barney == True and robin == True and marshall == True and lily == True:
         print("O quinteto estará reunido nessa jornada! É o momento perfeito pra brincar de “Você conhece o Ted?”.")
@@ -232,7 +232,7 @@ if lugar == "MacLaren’s Pub":
 # Outputs relacionando nomes e lugares
 if barney == True and lugar == "Arena de Laser Tag":
     print("Com certeza a Arena de Laser Tag foi escolhida por influência de Barney. Se arrume Ted, é hora de botar um terno, tomar um whisky e partir pra diversão.")
-if (barney == False and robin == True and marshall == False and lily == False) and lugar == "Carmichael’s":
+if robin == True  and lugar == "Carmichael’s" and quantidade_pessoas == 1:
     print("Acho que Ted e Robin vão sair em um date… Tomara que Ted não roube aquela trompa azul da parede de novo.")
 if (barney == True or robin == True or marshall == True or lily == True) and lugar == "MacLaren’s Pub":
     print("Não tem erro, né? Estar no MacLaren’s é como estar em casa.")
@@ -244,37 +244,37 @@ print()
 if quantidade_pessoas == 0:
     print(f"Relatório da situação de Ted:")
     print(f"Ted foi para o MacLaren’s... Olhe em volta, Ted, você está sozinho.")
-    print(f"- Quantidade de cervejas bebidas por Ted: {quant_media_cervejas * quantidade_pessoas}")
+    print(f"- Quantidade de cervejas bebidas por Ted: {quant_media_cervejas * (quantidade_pessoas + 1)}")
 elif quantidade_pessoas == 1:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1}.")
     print(f"- O local de afogar as mágoas foi: {lugar}.")
     print(f"- Saideira de um pra um. Nada melhor do que uma pessoa pra ouvir seus problemas.")
     if lugar == "MacLaren’s Pub":
-        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * quantidade_pessoas} cervejas.")
+        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
 elif quantidade_pessoas == 2:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1} e {nome2}.")
     print(f"- O local de afogar as mágoas foi: {lugar}.")
     print(f"- Duas pessoas se compadeceram com a situação do pobre Ted.")
     if lugar == "MacLaren’s Pub":
-        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * quantidade_pessoas} cervejas.")
+        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
 elif quantidade_pessoas == 3:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1}, {nome2} e {nome3}.")
     print(f"- O local de afogar as mágoas foi: {lugar}.")
     print(f"- Três pessoas! Ted conseguiu se divertir bastante.")
     if lugar == "MacLaren’s Pub":
-        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * quantidade_pessoas} cervejas.")
+        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
 else:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1}, {nome2}, {nome3} e {nome4}.")
     print(f"- O local de afogar as mágoas foi: {lugar}.")
     if barney == True and robin == True and marshall == True and lily == True:
-        print("O quinteto junto consegue resolver qualquer problema!")
+        print("- O quinteto junto consegue resolver qualquer problema!")
     else:
         print("- Saiu um quinteto um pouco diferente do que a gente tá acostumado, mas no fim conseguiram deixar Ted alegre.")
     
     if lugar == "MacLaren’s Pub":
-        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * quantidade_pessoas} cervejas.")
+        print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
 print("Pelo visto todo mundo já sabe como funciona a cabeça dele, né? Depois do rolê Ted conseguiu esfriar a cabeça e já tá pronto pra quebrar mais a cara. Quem será que serão os próximos a consolar o querido Ted Mosby?")
