@@ -8,7 +8,8 @@ lily = False
 
 # Entradas
 quantidade_pessoas = int(input())
-print("Hora da lista dos amigos da vez!")
+if quantidade_pessoas != 0:
+    print("Hora da lista dos amigos da vez!")
 # 0 pessoas
 if quantidade_pessoas == 0:
     lugar = "MacLaren’s Pub"
@@ -33,7 +34,7 @@ elif quantidade_pessoas == 1:
         print(f"{nome1} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.")
     
     #  Outputs relacionados com combinações de nomes
-    if marshall == True and lily == True:
+    if marshall == True and lily == True and quantidade_pessoas == 2:
         print("Nada melhor que um casal para dar conselhos de relacionamento.")
     if barney == True and marshall == True and lily == False and robin == False:
         print("Sem dúvida os melhores amigos de Ted. Mas tomara que Barney não queira implicar com Marshall sobre quem realmente é o melhor amigo dele.")
@@ -78,7 +79,7 @@ elif quantidade_pessoas == 2:
         print(f"{nome2} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.")
     
     #  Outputs relacionados com combinações de nomes
-    if marshall == True and lily == True:
+    if marshall == True and lily == True and quantidade_pessoas == 2:
         print("Nada melhor que um casal para dar conselhos de relacionamento.")
     if barney == True and marshall == True and lily == False and robin == False:
         print("Sem dúvida os melhores amigos de Ted. Mas tomara que Barney não queira implicar com Marshall sobre quem realmente é o melhor amigo dele.")
@@ -139,7 +140,7 @@ elif quantidade_pessoas == 3:
         print(f"{nome3} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.")
     
     #  Outputs relacionados com combinações de nomes
-    if marshall == True and lily == True:
+    if marshall == True and lily == True and quantidade_pessoas == 2:
         print("Nada melhor que um casal para dar conselhos de relacionamento.")
     if barney == True and marshall == True and lily == False and robin == False:
         print("Sem dúvida os melhores amigos de Ted. Mas tomara que Barney não queira implicar com Marshall sobre quem realmente é o melhor amigo dele.")
@@ -214,8 +215,10 @@ else:
         print("Lily adora fazer o papel da irmã mais velha. Com certeza ela irá consolar ele, mas só depois de dizer “Eu avisei”.")
     else:
         print(f"{nome4} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.")
-    
-#  Outputs relacionados com combinações de nomes
+
+    lugar = input()
+
+    #  Outputs relacionados com combinações de nomes
     if marshall == True and lily == True and quantidade_pessoas == 2:
         print("Nada melhor que um casal para dar conselhos de relacionamento.")
     if barney == True and marshall == True and quantidade_pessoas == 2:
@@ -223,28 +226,26 @@ else:
     if barney == True and robin == True and marshall == True and lily == True:
         print("O quinteto estará reunido nessa jornada! É o momento perfeito pra brincar de “Você conhece o Ted?”.")
 
-    lugar = input()
-
+if quantidade_pessoas != 0:
+    # Outputs relacionando nomes e lugares
+    if barney == True and lugar == "Arena de Laser Tag":
+        print("Com certeza a Arena de Laser Tag foi escolhida por influência de Barney. Se arrume Ted, é hora de botar um terno, tomar um whisky e partir pra diversão.")
+    if robin == True  and lugar == "Carmichael’s" and quantidade_pessoas == 1:
+        print("Acho que Ted e Robin vão sair em um date… Tomara que Ted não roube aquela trompa azul da parede de novo.")
+    if (barney == True or robin == True or marshall == True or lily == True) and lugar == "MacLaren’s Pub":
+        print("Não tem erro, né? Estar no MacLaren’s é como estar em casa.")
+    if (barney == False and robin == False and marshall == False and lily == False) and lugar == "MacLaren’s Pub":
+        print("Um lugar habitual, mas com uma galera diferente. Será estranho, mas Ted vai.")
 
 if lugar == "MacLaren’s Pub":
-    quant_media_cervejas = int(input("Quantidade média de cervejas:"))
-
-# Outputs relacionando nomes e lugares
-if barney == True and lugar == "Arena de Laser Tag":
-    print("Com certeza a Arena de Laser Tag foi escolhida por influência de Barney. Se arrume Ted, é hora de botar um terno, tomar um whisky e partir pra diversão.")
-if robin == True  and lugar == "Carmichael’s" and quantidade_pessoas == 1:
-    print("Acho que Ted e Robin vão sair em um date… Tomara que Ted não roube aquela trompa azul da parede de novo.")
-if (barney == True or robin == True or marshall == True or lily == True) and lugar == "MacLaren’s Pub":
-    print("Não tem erro, né? Estar no MacLaren’s é como estar em casa.")
-if (barney == False or robin == False or marshall == False or lily == False) and lugar == "MacLaren’s Pub":
-    print("Um lugar habitual, mas com uma galera diferente. Será estranho, mas Ted vai.")
+        quant_media_cervejas = int(input())
 
 # Relatório final
 print()
 if quantidade_pessoas == 0:
     print(f"Relatório da situação de Ted:")
-    print(f"Ted foi para o MacLaren’s... Olhe em volta, Ted, você está sozinho.")
-    print(f"- Quantidade de cervejas bebidas por Ted: {quant_media_cervejas * (quantidade_pessoas + 1)}")
+    print(f"Ted foi para o MacLaren’s… Olhe em volta, Ted, você está sozinho.")
+    print(f"- Quantidade de cervejas bebidas por Ted: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
 elif quantidade_pessoas == 1:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1}.")
@@ -252,6 +253,7 @@ elif quantidade_pessoas == 1:
     print(f"- Saideira de um pra um. Nada melhor do que uma pessoa pra ouvir seus problemas.")
     if lugar == "MacLaren’s Pub":
         print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
+    print("Pelo visto todo mundo já sabe como funciona a cabeça dele, né? Depois do rolê Ted conseguiu esfriar a cabeça e já tá pronto pra quebrar mais a cara. Quem será que serão os próximos a consolar o querido Ted Mosby?")
 elif quantidade_pessoas == 2:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1} e {nome2}.")
@@ -259,6 +261,7 @@ elif quantidade_pessoas == 2:
     print(f"- Duas pessoas se compadeceram com a situação do pobre Ted.")
     if lugar == "MacLaren’s Pub":
         print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
+    print("Pelo visto todo mundo já sabe como funciona a cabeça dele, né? Depois do rolê Ted conseguiu esfriar a cabeça e já tá pronto pra quebrar mais a cara. Quem será que serão os próximos a consolar o querido Ted Mosby?")
 elif quantidade_pessoas == 3:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1}, {nome2} e {nome3}.")
@@ -266,6 +269,7 @@ elif quantidade_pessoas == 3:
     print(f"- Três pessoas! Ted conseguiu se divertir bastante.")
     if lugar == "MacLaren’s Pub":
         print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
+    print("Pelo visto todo mundo já sabe como funciona a cabeça dele, né? Depois do rolê Ted conseguiu esfriar a cabeça e já tá pronto pra quebrar mais a cara. Quem será que serão os próximos a consolar o querido Ted Mosby?")
 else:
     print(f"Relatório da situação de Ted:")
     print(f"- Ted foi consolado por: {nome1}, {nome2}, {nome3} e {nome4}.")
@@ -277,4 +281,4 @@ else:
     
     if lugar == "MacLaren’s Pub":
         print(f"- Quantidade de cervejas bebidas pelo grupo: {quant_media_cervejas * (quantidade_pessoas + 1)} cervejas.")
-print("Pelo visto todo mundo já sabe como funciona a cabeça dele, né? Depois do rolê Ted conseguiu esfriar a cabeça e já tá pronto pra quebrar mais a cara. Quem será que serão os próximos a consolar o querido Ted Mosby?")
+    print("Pelo visto todo mundo já sabe como funciona a cabeça dele, né? Depois do rolê Ted conseguiu esfriar a cabeça e já tá pronto pra quebrar mais a cara. Quem será que serão os próximos a consolar o querido Ted Mosby?")
